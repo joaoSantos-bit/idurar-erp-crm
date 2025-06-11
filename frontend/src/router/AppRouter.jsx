@@ -26,6 +26,7 @@ export default function AppRouter() {
         }
       }
     }
+    
     // Return 'default' app  if the path is not found
     return 'default';
   }
