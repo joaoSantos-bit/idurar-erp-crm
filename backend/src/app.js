@@ -20,7 +20,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: true,
+    origin: [
+      'http://localhost:3000',
+      'http://163.5.124.55:8888', // IP da VPS
+      // 'http://seudominio.com' 
+    ],
     credentials: true,
   })
 );
