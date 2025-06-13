@@ -33,6 +33,8 @@ for (const filePath of modelsFiles) {
 
 // Start our app!
 const app = require('./app');
+app.set('port', process.env.PORT || 3000);
+
 const PORT = app.get('port') || 8888;
 
 const server = app.listen(PORT, '0.0.0.0', () => {
