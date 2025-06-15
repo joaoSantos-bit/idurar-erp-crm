@@ -13,11 +13,12 @@ const listAll = require('./listAll');
 const paginatedList = require('./paginatedList');
 
 const createCRUDController = (modelName) => {
-  if (!modelsFiles.includes(modelName)) {
+  const Model = mongoose.models[modelName];
+
+  if (!Model) {
     throw new Error(`Model ${modelName} does not exist`);
   }
-
-  const Model = mongoose.model(modelName);
+  
   let crudMethods = {
     create: (req, res) => create(Model, req, res),
     read: (req, res) => read(Model, req, res),

@@ -20,10 +20,12 @@ const erpApiRouter = require('./routes/appRoutes/appApi');
 const app = express();
 
 const allowedOrigins = [
-    'http://192.168.0.103', 
-    'http://192.168.0.103:80',   // seu frontend exposto pelo nginx na porta 80
-    'http://localhost:3000',     // caso rode localmente
-    // outros domínios que quiser permitir
+  'http://163.5.124.55',
+  'http://163.5.124.55:80',
+  'http://localhost:3000',
+  'http://localhost:8888',
+  'http://mhgestao.com.br',
+  'http://www.mhgestao.com.br',
 ];
 
 app.use(
@@ -39,6 +41,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
